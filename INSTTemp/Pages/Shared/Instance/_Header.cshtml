@@ -1,0 +1,76 @@
+﻿<header class="header">
+    <div class="top-bar theme-bg-primary-darken">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-dark position-relative">
+                <ul class="social-list list-inline mb-0">
+                    <li class="list-inline-item"><a class="text-white" href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
+                    <li class="list-inline-item"><a class="text-white" href="#"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
+                    <li class="list-inline-item"><a class="text-white" href="#"><i class="fab fa-github-alt fa-fw"></i></a></li>
+                    <li class="list-inline-item"><a class="text-white" href="#"><i class="fab fa-stack-overflow fa-fw"></i></a></li>
+                    <li class="list-inline-item"><a class="text-white" href="#"><i class="fab fa-codepen fa-fw"></i></a></li>
+                </ul>
+                        <!--//social-list-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse text-uppercase" id="navigation">
+
+                    <ul class="navbar-nav ml-lg-auto">
+                        <li class="nav-item active mr-lg-3">
+                            <a class="nav-link" asp-page="/Index">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item mr-lg-3">
+                            <a class="nav-link">Projects</a>
+                        </li>
+                        <li class="nav-item mr-lg-3">
+                            <a class="nav-link">Talks</a>
+                        </li>
+                        <li class="nav-item mr-lg-3">
+                            <a class="nav-link">Blog</a>
+                        </li>
+                        <li class="nav-item mr-lg-3">
+                            <a class="nav-link">Resume</a>
+                        </li>
+                        <li class="nav-item mr-lg-3">
+                            <a class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+
+                    <span id="slide-line"></span>
+                    <partial name="_LoginPartial" />
+                </div>
+
+
+
+            </nav>
+
+        </div><!--//container-->
+
+    </div><!--//top-bar-->
+
+    <div class="header-intro theme-bg-primary text-white py-5">
+        <div class="container">
+            <div class="profile-teaser media flex-column flex-md-row">
+                <img class="profile-image mb-3 mb-md-0 mr-md-5 ml-md-0 rounded mx-auto" src="~/Img/Abd.png" alt="">
+                <div class="media-body text-center text-md-left">
+                    <div class="lead">Hello, my name is</div>
+                    <h2 class="mt-0 display-4 font-weight-bold">Abdinoor Suleman</h2>
+                    <div class="bio mb-3">
+                        I'm a full-stack developer specialised in frontend and backend development for complex scalable web apps. I write about web development on 
+                    <a class="link-on-bg" href="">my blog</a> and regularly 
+                    <a class="link-on-bg" href="">speak</a> 
+                    at various web conferences and meetups. Want to know how I may help your project? Check out my project 
+                    <a class="link-on-bg" href="">case studies</a> and
+                    <a class="link-on-bg" href="">resume</a>.
+                    </div><!--//bio-->
+                    <a class="theme-btn-on-bg btn font-weight-bold theme-btn-cta" href="contact.html">Hire Me</a>
+
+                </div><!--//media-body-->
+            </div><!--//profile-teaser-->
+
+        </div><!--//container-->
+    </div><!--//header-intro-->
+
+</header>
+<!--//header-->
