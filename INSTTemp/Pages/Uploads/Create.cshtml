@@ -1,0 +1,85 @@
+﻿@page
+@model INSTTemp.Pages.Uploads.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    var doc = "application/msword";
+    var docx = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+    var ppt = "application/vnd.ms-powerpoint";
+    var pptx = "application/vnd.openxmlformats-officedocument.presentationml.presentation";
+    var xls = "application/vnd.ms-excel";
+    var xlsx = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+    var pdf = "application/pdf";
+}
+
+<div class="uploadform">
+    <div class="container">
+        <div class="col-md-6 mx-auto text-center">
+            <div class="header-title">
+                <h1 class="wv-heading--title">
+                    Upload your lecture And Relex
+                </h1>
+                <h2 class="wv-heading--subtitle">
+                    Teachers Are Use able To Send Docments There Students
+                </h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mx-auto">
+                <div class="myform form ">
+                    <form method="post" enctype="multipart/form-data">
+                        @Html.AntiForgeryToken()
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <input asp-for="_Upl.lectureName" class="form-control my-input" id="name" placeholder="Enter Your lecture Name">
+                            <span asp-validation-for="_Upl.lectureName" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input asp-for="_Upl.lectureNumber" class="form-control my-input" placeholder="Enter Your Chapter number" />
+                            <span asp-validation-for="_Upl.lectureNumber" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="custom-file">
+                                <input type="file" asp-for="_Fup" class="custom-file-input" accept="@doc,@docx,@ppt,@pptx,@xls,@xlsx,@pdf">
+                                <label class="custom-file-label" for="inputGroupFile01">Please Select Only documents</label>
+                                <span asp-validation-for="_Fup" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="text-center ">
+                            <button type="submit" class=" btn btn-block send-button tx-tfm">Create Your Free Account</button>
+                        </div>
+                        <div class="col-md-12 ">
+                            <div class="login-or">
+                                <hr class="hr-or">
+                                <span class="span-or">or</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <a class="btn btn-block g-button" asp-page="Index">
+                                <i class="fa fa-google"></i>Back to List
+                            </a>
+                        </div>
+                        <p class="small mt-3">
+                            <span>Here you Can Send Document To your Teachers And Students</span>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script type="text/javascript">
+       $(document).ready(function () {
+           $('.custom-file-input').on('change', function () {
+               var Fname = $(this).val().split('\\').pop();
+               $(this).next('.custom-file-label').html(Fname);
+           });
+       });
+    </script>
+}

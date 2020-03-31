@@ -4,6 +4,15 @@
 	// Menu has active item
 	//Ref: https://codepen.io/digistate/pen/OXXjXM
 
+	var nav = $('#sftop');
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 100) {
+			nav.addClass("fixed-top");
+		} else {
+			nav.removeClass("fixed-top");
+		}
+	});
+
 	$nav = $("#navigation"),
 		$slideLine = $("#slide-line"),
 		$currentItem = $("#navigation li.active");

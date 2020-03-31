@@ -1,7 +1,9 @@
 using INSTTemp.Data;
 using INSTTemp.Services;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.CookiePolicy;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +26,14 @@ namespace INSTTemp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                options.CheckConsentNeeded = context => true;
+                options.HttpOnly = HttpOnlyPolicy.Always;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+                options.Secure = CookieSecurePolicy.Always;
+            });
             services.AddDbContext<APPDBC>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DBCS")));
@@ -69,7 +79,7 @@ namespace INSTTemp
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseCookiePolicy();
             app.UseRouting();
 
             app.UseAuthentication();

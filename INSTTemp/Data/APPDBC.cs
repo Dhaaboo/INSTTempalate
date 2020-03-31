@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using INSTTemp.Data.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,10 +12,12 @@ namespace INSTTemp.Data
         {
         }
 
+        public DbSet<Upload> Uploads { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            //new INSTTempUser(builder.Entity<INSTTempUser>());
+            builder.Entity<Upload>().ToTable("Uploads");
             //new CoinQuotesDailyMap(modelBuilder.Entity<CoinQuotesDaily>());
         }
     }

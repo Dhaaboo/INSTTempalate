@@ -1,0 +1,60 @@
+﻿@page
+@model INSTTemp.Pages.Uploads.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Upload</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Upload.Id" />
+            <div class="form-group">
+                <label asp-for="Upload.lectureName" class="control-label"></label>
+                <input asp-for="Upload.lectureName" class="form-control" />
+                <span asp-validation-for="Upload.lectureName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Upload.lectureNumber" class="control-label"></label>
+                <input asp-for="Upload.lectureNumber" class="form-control" />
+                <span asp-validation-for="Upload.lectureNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Upload.FilePath" class="control-label"></label>
+                <input asp-for="Upload.FilePath" class="form-control" />
+                <span asp-validation-for="Upload.FilePath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Upload.FileSize" class="control-label"></label>
+                <input asp-for="Upload.FileSize" class="form-control" />
+                <span asp-validation-for="Upload.FileSize" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Upload.DataDoc" class="control-label"></label>
+                <input asp-for="Upload.DataDoc" class="form-control" />
+                <span asp-validation-for="Upload.DataDoc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Upload.CreatedOn" class="control-label"></label>
+                <input asp-for="Upload.CreatedOn" class="form-control" />
+                <span asp-validation-for="Upload.CreatedOn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INSTTemp", "INSTTemp\INSTTemp.csproj", "{90D53BDC-A402-4241-A426-9F959139A97B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "INSTTemp", "INSTTemp\INSTTemp.csproj", "{90D53BDC-A402-4241-A426-9F959139A97B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
