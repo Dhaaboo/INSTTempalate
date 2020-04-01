@@ -12,6 +12,11 @@ namespace INSTTemp
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                   //.ConfigureKestrel((context, options) =>
+                   //{
+                   //    // Handle requests up to 50 MB
+                   //    options.Limits.MaxRequestBodySize = 52428800;
+                   //})
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

@@ -75,10 +75,12 @@ body {
 .uploadform {
     background: rgb(255, 255, 255);
     box-shadow: 0 5px 8px 0 rgba(32, 177, 168, 0.91), 0 9px 26px 0 rgba(32, 177, 168, 0.91);
-    padding: 1%;
+    padding: 3%;
     width: 100%;
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
 }
 
 .send-button {

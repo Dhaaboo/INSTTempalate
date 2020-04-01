@@ -14,7 +14,9 @@ using System.IO;
 
 namespace INSTTemp.Pages.Uploads
 {
+    //[HttpPost()]
     [ValidateAntiForgeryToken]
+    [RequestFormLimits(MultipartBodyLengthLimit = 268435456)]
     public class CreateModel : PageModel
     {
         private readonly APPDBC _db;
